@@ -144,16 +144,16 @@ class RamenModel {
       }
       value = slugify(value)
 
-      const slugPath = slugPath.split('.')
-      const lastIndex = slugPath.length-1
+      const slugPaths = slugPath.split('.')
+      const lastIndex = slugPaths.length-1
       for (let i = 0; i < lastIndex; i++) {
-        const key = slugPath[i]
+        const key = slugPaths[i]
         if (!(key in obj)) {
           return
         }
         obj = obj[key]
       }
-      obj[slugPath[lastIndex]] = value
+      obj[slugPaths[lastIndex]] = value
     }
   }
 }
